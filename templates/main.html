@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title> Credit Card Model</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Gender:
+        <input name="Gender" type="text" required>
+        <br>
+        <br> Owned_Car:
+        <input name="Owned_Car" type="text" required>
+        <br>
+        <br> Owned_Realty:
+        <input name="Owned_Realty" type="text" required>
+        <br>
+        <br> Total_Children:
+        <input name="Total_Children" type="number" required>
+        <br>
+        <br> Total_Income:
+        <input name="Total_Income" type="number" required>
+        <br>
+        <br> Income_Type:
+        <input name="Income_Type" type="number" required>
+        <br>
+        <br> Education_Type:
+        <input name="Education_Type" type="number" required>
+        <br>
+        <br> Family_Status:
+        <input name="Family_Status" type="number" required>
+        <br>
+        <br> Housing_Type:
+        <input name="Housing_Type" type="number" required>
+        <br>
+        <br> Owned_Mobile_Phone:
+        <input name="Owned_Mobile_Phone" type="number" required>
+        <br>
+        <br> Owned_Work_Phone:
+        <input name="Owned_Work_Phone" type="number" required>
+        <br>
+        <br> Owned_Phone:
+        <input name="Owned_Phone" type="number" required>
+        <br>
+        <br> Owned_Email:
+        <input name="Owned_Email" type="number" required>
+        <br>
+        <br> Job_Title:
+        <input name="Job_Title" type="number" required>
+        <br>
+        <br> Total_Family_Members:
+        <input name="Total_Family_Members" type="number" required>
+        <br>
+        <br> Applicant_Age:
+        <input name="Applicant_Age" type="number" required>
+        <br>
+        <br> Years_of_Working:
+        <input name="Years_of_Working" type="number" required>
+        <br>
+        <br> Total_Bad_Debt:
+        <input name="Total_Bad_Debt" type="number" required>
+        <br>
+        <br> Total_Good_Debt:
+        <input name="Total_Good_Debt" type="number" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+    	{% for variable, value in original_input.items() %}
+    		<b>{{ variable }}</b> : {{ value }}
+    	{% endfor %}
+		<br>
+    	<br> Credit card can be issued or not:
+   		<p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+
+</html>
